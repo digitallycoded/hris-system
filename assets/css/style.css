@@ -55,12 +55,6 @@ button{
       background: linear-gradient(135deg, #0b2a4a, #1e3c72, #2a5298);
       overflow: hidden;
     }
-
-    .logo{
-        width: 230px;
-        height: 230px;
-    }
-
     /* floating blobs */
     .blob {
       position: absolute;
