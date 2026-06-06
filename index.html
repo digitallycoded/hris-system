@@ -26,20 +26,6 @@
     </div>
     
     <script src="assets/js/app.js"></script>
-    <script>
-        function requireAuth(){
-        
-          const token = localStorage.getItem("token");
-        
-          if(!token){
-            window.location.href = "index.html";
-          }
-        
-        }
-
-        window.onload = requireAuth;
-      
-    </script>
   
   </body>
 </html>
