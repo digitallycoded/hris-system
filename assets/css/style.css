@@ -56,6 +56,11 @@ button{
       overflow: hidden;
     }
 
+    .logo{
+        width: 230px;
+        height: 230px;
+    }
+
     /* floating blobs */
     .blob {
       position: absolute;
