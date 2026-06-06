@@ -1,1 +1,40 @@
+body {
+    background: #f4f6f9;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
+.login-card {
+    width: 350px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box; /* Critical fix */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #003366;
+  outline: none;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  background:#003366;
+  color:#fff;
+  border:none;
+}
