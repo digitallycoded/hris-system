@@ -3,56 +3,60 @@ const GAS_URL =
 
 async function login(){
 
-  const response = await fetch(GAS_URL, {
-    method: "POST",
-    body: JSON.stringify({
-      action: "login",
-      username: document.getElementById("username").value,
-      password: document.getElementById("password").value
-    })
-  });
-
-  const result = await response.json();
-
-  console.log(result);
-}
-
-async function login(){
-
   const username =
-    document.getElementById(
-      "username"
-    ).value;
+    document.getElementById("username").value.trim();
 
   const password =
-    document.getElementById(
-      "password"
-    ).value;
+    document.getElementById("password").value;
 
-  google.script.run
-    .withSuccessHandler(
-      function(res){
+  const msg =
+    document.getElementById("msg");
 
-        if(res.success){
+  if(!username || !password){
+    msg.innerText = "Please fill in all fields";
+    return;
+  }
 
-          localStorage.setItem(
-            "token",
-            res.token
-          );
+  try{
 
-          location.reload();
+    const response = await fetch(GAS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        action: "login",
+        username: username,
+        password: password
+      })
+    });
 
-        }else{
+    const res = await response.json();
 
-          document
-            .getElementById("msg")
-            .innerHTML =
-            res.message;
-        }
+    if(res.success){
+
+      // Save session
+      localStorage.setItem("token", res.token);
+      localStorage.setItem("role", res.role);
+      localStorage.setItem("userId", res.userId);
+
+      // Redirect logic
+      if(res.role === "ADMIN" || res.role === "HR"){
+        window.location.href = "admin-dashboard.html";
+      }else{
+        window.location.href = "dashboard.html";
       }
-    )
-    .login(
-      username,
-      password
-    );
+
+    }else{
+
+      msg.innerText = res.message || "Invalid login";
+
+    }
+
+  }catch(err){
+
+    console.error(err);
+    msg.innerText = "Server error. Please try again.";
+
+  }
 }
