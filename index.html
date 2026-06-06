@@ -1,34 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>HRIS Login</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-<div class="login-card">
-
-  <h2>HRIS Login</h2>
+  <head>
+    <title>HRIS Login</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
   
-  <input
-  id="username"
-  placeholder="Username">
+  <body>
   
-  <input
-  id="password"
-  type="password"
-  placeholder="Password">
+    <div class="login-card">
+    
+      <h2>HRIS Login</h2>
+      
+      <input
+      id="username"
+      placeholder="Username">
+      
+      <input
+      id="password"
+      type="password"
+      placeholder="Password">
+      
+      <button onclick="login()">
+      Login
+      </button>
+      
+      <div id="msg"></div>
+    
+    </div>
+    
+    <script src="assets/js/app.js"></script>
   
-  <button onclick="login()">
-  Login
-  </button>
-  
-  <div id="msg"></div>
-
-</div>
-
-<script src="assets/js/app.js"></script>
-
-</body>
+  </body>
 </html>
