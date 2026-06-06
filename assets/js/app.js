@@ -3,60 +3,44 @@ const GAS_URL =
 
 async function login(){
 
-  const username =
-    document.getElementById("username").value.trim();
-
-  const password =
-    document.getElementById("password").value;
-
-  const msg =
-    document.getElementById("msg");
-
-  if(!username || !password){
-    msg.innerText = "Please fill in all fields";
-    return;
-  }
-
   try{
 
-    const response = await fetch(GAS_URL, {
+    const res = await fetch(GAS_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
       body: JSON.stringify({
         action: "login",
-        username: username,
-        password: password
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value
       })
     });
 
-    const res = await response.json();
+    const text = await res.text();   // IMPORTANT DEBUG STEP
 
-    if(res.success){
+    console.log("RAW RESPONSE:", text);
 
-      // Save session
-      localStorage.setItem("token", res.token);
-      localStorage.setItem("role", res.role);
-      localStorage.setItem("userId", res.userId);
+    const data = JSON.parse(text);
 
-      // Redirect logic
-      if(res.role === "ADMIN" || res.role === "HR"){
+    if(data.success){
+
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.role);
+      localStorage.setItem("userId", data.userId);
+
+      if(data.role === "ADMIN" || data.role === "HR"){
         window.location.href = "admin-dashboard.html";
       }else{
         window.location.href = "dashboard.html";
       }
 
     }else{
-
-      msg.innerText = res.message || "Invalid login";
-
+      document.getElementById("msg").innerText = data.message;
     }
 
   }catch(err){
 
     console.error(err);
-    msg.innerText = "Server error. Please try again.";
+    document.getElementById("msg").innerText =
+      "Server error. Check GAS deployment.";
 
   }
 }
