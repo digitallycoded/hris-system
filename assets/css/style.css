@@ -1,4 +1,4 @@
-body {
+/*body {
     background: #f4f6f9;
     font-family: Arial;
     display: flex;
@@ -20,7 +20,7 @@ input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  box-sizing: border-box; /* Critical fix */
+  box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
@@ -38,3 +38,127 @@ button{
   color:#fff;
   border:none;
 }
+*/
+
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: linear-gradient(135deg, #0b2a4a, #1e3c72, #2a5298);
+      overflow: hidden;
+    }
+
+    /* floating blobs */
+    .blob {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .blob:nth-child(1) {
+      top: -100px;
+      left: -100px;
+    }
+
+    .blob:nth-child(2) {
+      bottom: -120px;
+      right: -120px;
+      animation-delay: 2s;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(30px); }
+    }
+
+    /* login card */
+    .login-card {
+      width: 350px;
+      padding: 30px;
+
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.2);
+
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      color: white;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .login-card h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .login-card input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+
+      border: none;
+      border-radius: 8px;
+      outline: none;
+
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    .login-card input::placeholder {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+
+      border: none;
+      border-radius: 8px;
+
+      background: #00c6ff;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .login-card button:hover {
+      transform: scale(1.03);
+    }
+
+    #msg {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #ffb3b3;
+    }
+
+    /* logo */
+    .logo {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 11px;
+      opacity: 0.7;
+    }
