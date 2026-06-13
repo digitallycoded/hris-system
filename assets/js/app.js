@@ -68,6 +68,8 @@ loadQR();
 
 setInterval(loadQR, 120000);
 
+startQRTimer();
+
 let countdown = 120; // 2 minutes
 
 function startQRTimer() {
