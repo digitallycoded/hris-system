@@ -79,10 +79,18 @@ function startQRTimer() {
     const minutes = Math.floor(countdown / 60);
     const seconds = countdown % 60;
 
-    timerElement.textContent =
-      `Refreshing in ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+   timerElement.textContent =
+    `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
 
     countdown--;
+
+    if (countdown <= 30) {
+      timerElement.className = "danger";
+    } else if (countdown <= 60) {
+      timerElement.className = "warning";
+    } else {
+      timerElement.className = "";
+    }
 
     if (countdown < 0) {
 
