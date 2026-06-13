@@ -1,3 +1,4 @@
+/* Universal reset to fix padding layout issues */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -40,6 +41,12 @@ body{
 
   color:white;
   text-align:center;
+  
+  /* Flex direction forces all child contents to center vertically and horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .qr-image{
@@ -50,6 +57,14 @@ body{
   padding:10px;
 
   border-radius:10px;
+  
+  /* Ensures block display so it respects centering rules */
+  display: block;
+}
+
+/* Added form selector to ensure inputs stretch across the whole flex container width */
+.portal-card form {
+  width: 100%;
 }
 
 .portal-card h2{
