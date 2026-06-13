@@ -55,64 +55,62 @@ function requireAuth(){
 
 }
 
-async function loadQR(){
+let qrExpiry = 0;
 
-  const qr =
-    await api.getAttendanceQR();
+async function loadQR() {
 
-  document.getElementById("attendanceQR")
-    .src = qr.image;
+  const response = await fetch(
+    GAS_URL + "?action=getAttendanceQR"
+  );
+
+  const data = await response.json();
+
+  qrExpiry = data.expiresAt;
+
+  document.getElementById("attendanceQR").src =
+    data.qr;
+
 }
 
-loadQR();
+function startGlobalTimer() {
 
-setInterval(loadQR, 120000);
-
-startQRTimer();
-
-let countdown = 120; // 2 minutes
-
-function startQRTimer() {
-
-  const timerElement = document.getElementById("qrTimer");
+  const timer =
+    document.getElementById("qrTimer");
 
   setInterval(() => {
 
-    const minutes = Math.floor(countdown / 60);
-    const seconds = countdown % 60;
+    const now =
+      Math.floor(Date.now() / 1000);
 
-   timerElement.textContent =
-    `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+    let remaining =
+      qrExpiry - now;
 
-    countdown--;
+    if(remaining <= 0){
 
-    if (countdown <= 30) {
-      timerElement.className = "danger";
-    } else if (countdown <= 60) {
-      timerElement.className = "warning";
-    } else {
-      timerElement.className = "";
+      timer.textContent = "Refreshing...";
+
+      loadQR();
+
+      return;
     }
 
-    if (countdown < 0) {
+    const minutes =
+      Math.floor(remaining / 60);
 
-      // Refresh QR here
-      refreshQR();
+    const seconds =
+      remaining % 60;
 
-      // Reset timer
-      countdown = 120;
-    }
+    timer.textContent =
+      `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
 
   }, 1000);
 
 }
 
-function refreshQR() {
+window.onload = async () => {
 
-  console.log("Refreshing QR...");
+  await loadQR();
 
-  // Example: update QR image
-  // document.getElementById("attendanceQR").src =
-  //   newQrUrl + "?t=" + Date.now();
+  startGlobalTimer();
 
-}
+};
