@@ -115,3 +115,16 @@ body{
 .portal-card button:hover{
   transform:translateY(-2px);
 }
+
+#qrTimer{
+  font-weight:600;
+  margin-top:15px;
+}
+
+#qrTimer.warning{
+  color:#ffcc00;
+}
+
+#qrTimer.danger{
+  color:#ff6b6b;
+}
