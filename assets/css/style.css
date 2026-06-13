@@ -49,6 +49,12 @@ body{
   align-items: center;
 }
 
+.portal-card .login{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .qr-image{
   width:220px;
   height:220px;
