@@ -54,3 +54,16 @@ function requireAuth(){
   }
 
 }
+
+async function loadQR(){
+
+  const qr =
+    await api.getAttendanceQR();
+
+  document.getElementById("attendanceQR")
+    .src = qr.image;
+}
+
+loadQR();
+
+setInterval(loadQR, 120000);
