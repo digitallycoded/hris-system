@@ -12,25 +12,53 @@
     <div class="blob"></div>
     <div class="blob"></div>
   
-    <div class="login-card">
-  
-      <!-- LOGO -->
-      <img class="logo" src="assets/images/favicon.png">
-  
-      <h2>HRIS Portal</h2>
-  
-      <input id="username" placeholder="Username" autocomplete="username">
-  
-      <input id="password" type="password" placeholder="Password" autocomplete="current-password">
-  
-      <button onclick="login()">Sign In</button>
-  
-      <div id="msg"></div>
-  
-      <div class="footer-text">
-        Secure HR & Payroll System by jmmmonitoring
+    <div class="portal-container">
+    
+      <!-- QR CARD -->
+      <div class="portal-card">
+    
+        <div class="card-icon">
+          📱
+        </div>
+    
+        <h2>QR Attendance</h2>
+    
+        <p>
+          Scan QR code to record your attendance.
+        </p>
+    
+        <button onclick="window.location.href='attendance.html'">
+          Open Scanner
+        </button>
+    
       </div>
-  
+    
+      <!-- LOGIN CARD -->
+      <div class="portal-card">
+    
+        <div class="card-icon">
+          👤
+        </div>
+    
+        <h2>HRIS Login</h2>
+    
+        <input
+          id="username"
+          placeholder="Username">
+    
+        <input
+          id="password"
+          type="password"
+          placeholder="Password">
+    
+        <button onclick="login()">
+          Sign In
+        </button>
+    
+        <div id="msg"></div>
+    
+      </div>
+    
     </div>
   
     <script src="assets/js/app.js"></script>
