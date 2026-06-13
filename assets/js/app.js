@@ -67,3 +67,42 @@ async function loadQR(){
 loadQR();
 
 setInterval(loadQR, 120000);
+
+let countdown = 120; // 2 minutes
+
+function startQRTimer() {
+
+  const timerElement = document.getElementById("qrTimer");
+
+  setInterval(() => {
+
+    const minutes = Math.floor(countdown / 60);
+    const seconds = countdown % 60;
+
+    timerElement.textContent =
+      `Refreshing in ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    countdown--;
+
+    if (countdown < 0) {
+
+      // Refresh QR here
+      refreshQR();
+
+      // Reset timer
+      countdown = 120;
+    }
+
+  }, 1000);
+
+}
+
+function refreshQR() {
+
+  console.log("Refreshing QR...");
+
+  // Example: update QR image
+  // document.getElementById("attendanceQR").src =
+  //   newQrUrl + "?t=" + Date.now();
+
+}
