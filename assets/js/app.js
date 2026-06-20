@@ -132,7 +132,7 @@ document
 
 
 
-function closeLogin(){
+function closeLogin(modal){
 
   modal.classList.remove('show');
 
@@ -142,7 +142,7 @@ window.addEventListener("click", e => {
 
   if(e.target === modal){
 
-    closeLogin();
+    closeLogin(modal);
 
   }
 
