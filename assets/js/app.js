@@ -126,7 +126,10 @@ function closeModal(modal){
 document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
-    openModal(document.getElementById("loginModal"));
+
+    const modal = document.getelementByID('loginModal');
+    
+    openModal(modal);
 });
 
 
