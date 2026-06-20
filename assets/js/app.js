@@ -130,16 +130,11 @@ document
 });
 
 
-
-function closeLogin(modal){
- closeModal(document.getElementById("loginModal"););
-}
-
 window.addEventListener("click", e => {
 
   if(e.target === modal){
 
-    closeLogin(modal);
+    closeLogin(e);
 
   }
 
