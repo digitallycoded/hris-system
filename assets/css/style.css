@@ -158,16 +158,16 @@ body{
   background:rgba(255,255,255,.2);
 }
 
-.modal{
+/*.modal{
   background-color: rgba(0,0,0,0.7);
   height:100%;
   width:100%;
   position: fixed;
   top: 0;
   left: 0;
-  /*display:none;*/
+  display:none;
   z-index:10;
-  /*text-align: center;*/
+  text-align: center;
 }
 
 .modal-card{
@@ -188,6 +188,33 @@ body{
   color:white;
 
   position:relative;
+}*/
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  /* These 3 lines perfectly center the .modal-card */
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center;     /* Vertical centering */
+}
+
+.modal-card {
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, .12);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  color: white;
+  position: relative; /* Kept intact for any internal absolute positioning */
 }
 
 .modal-card input{
