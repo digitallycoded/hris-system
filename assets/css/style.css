@@ -158,9 +158,19 @@ body{
   background:rgba(255,255,255,.2);
 }
 
-.modal-card{
+.modal{
+  background-color: rgba(0,0,0,0.7);
+  height:100%;
+  width:100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display:none;
+  z-index:10;
+  text-align: center;
+}
 
-  display: none;
+.modal-card{
 
   width:350px;
 
