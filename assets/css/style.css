@@ -160,6 +160,8 @@ body{
 
 .modal-card{
 
+  display: none;
+
   width:350px;
 
   padding:30px;
