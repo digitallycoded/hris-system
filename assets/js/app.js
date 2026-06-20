@@ -127,7 +127,7 @@ document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
 
-    const modal = document.getelementById('loginModal');
+    const modal = document.getElementById('loginModal');
     
     openModal(modal);
 });
