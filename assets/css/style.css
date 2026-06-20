@@ -166,9 +166,12 @@ body{
   top: 0;
   left: 0;
   z-index: 10;
-  display: flex;
   justify-content: center; /* Horizontal centering */
   align-items: center;     /* Vertical centering */
+}
+
+.modal.show{
+  display: flex;
 }
 
 .modal-card {
