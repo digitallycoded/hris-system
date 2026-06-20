@@ -114,3 +114,30 @@ window.onload = async () => {
   startGlobalTimer();
 
 };
+
+const modal =
+  document.getElementById("loginModal");
+
+document
+  .getElementById("loginBtn")
+  .addEventListener("click", () => {
+
+    modal.style.display = "flex";
+
+  });
+
+function closeLogin(){
+
+  modal.style.display = "none";
+
+}
+
+window.addEventListener("click", e => {
+
+  if(e.target === modal){
+
+    closeLogin();
+
+  }
+
+});
