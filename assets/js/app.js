@@ -119,6 +119,10 @@ function openModal(modal){
   modal.classList.add('show');
 }
 
+function closeModal(modal){
+  modal.classList.remove('show');
+}
+
 document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
@@ -133,8 +137,9 @@ document
 
 
 function closeLogin(modal){
-
-  modal.classList.remove('show');
+  const modal =
+  document.getElementById("loginModal");
+ closeModal(modal);
 
 }
 
