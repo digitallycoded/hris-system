@@ -122,7 +122,7 @@ document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
 
-    modal.style.display = "block";
+    modal.style.display = "flex";
 
   });
 
