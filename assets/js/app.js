@@ -122,13 +122,13 @@ document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
 
-    modal.classList.remove('show');
+    modal.classList.add('show');
 
   });
 
 function closeLogin(){
 
-  modal.style.display = "none";
+  modal.classList.remove('show');
 
 }
 
