@@ -45,7 +45,7 @@ async function login(){
   }
 }
 
-function requireAuth(){
+/*function requireAuth(){
 
   const token = localStorage.getItem("token");
 
@@ -113,7 +113,7 @@ window.onload = async () => {
 
   startGlobalTimer();
 
-};
+};*/
 
 const modal =
   document.getElementById("loginModal");
