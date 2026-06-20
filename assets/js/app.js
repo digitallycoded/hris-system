@@ -115,16 +115,22 @@ window.onload = async () => {
 
 };
 
-const modal =
-  document.getElementById("loginModal");
+function openModal(modal){
+  modal.classList.add('show');
+}
 
 document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
 
-    modal.classList.add('show');
+  const modal =
+  document.getElementById("loginModal");
 
-  });
+    openModal(modal);
+
+});
+
+
 
 function closeLogin(){
 
