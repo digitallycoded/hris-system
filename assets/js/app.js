@@ -126,21 +126,13 @@ function closeModal(modal){
 document
   .getElementById("loginBtn")
   .addEventListener("click", () => {
-
-  const modal =
-  document.getElementById("loginModal");
-
-    openModal(modal);
-
+    openModal(document.getElementById("loginModal"));
 });
 
 
 
 function closeLogin(modal){
-  const modal =
-  document.getElementById("loginModal");
- closeModal(modal);
-
+ closeModal(document.getElementById("loginModal"););
 }
 
 window.addEventListener("click", e => {
