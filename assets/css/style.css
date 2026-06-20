@@ -170,7 +170,7 @@ body{
   align-items: center;     /* Vertical centering */
 }
 
-.modal .show{
+.modal.show{
   display: flex;
 }
 
