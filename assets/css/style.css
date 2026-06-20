@@ -158,7 +158,7 @@ body{
   background:rgba(255,255,255,.2);
 }
 
-/*.modal{
+.modal{
   background-color: rgba(0,0,0,0.7);
   height:100%;
   width:100%;
@@ -188,9 +188,9 @@ body{
   color:white;
 
   position:relative;
-}*/
+}
 
-.modal {
+/*.modal {
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
   width: 100%;
@@ -215,7 +215,7 @@ body{
   border: 1px solid rgba(255, 255, 255, .2);
   color: white;
   position: relative; /* Kept intact for any internal absolute positioning */
-}
+}*/
 
 .modal-card input{
 
