@@ -165,7 +165,7 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  display:none;
+  /*display:none;*/
   z-index:10;
   text-align: center;
 }
