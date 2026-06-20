@@ -8,13 +8,16 @@
   </head>
     
   <body>
-  
+
+    <span id="loginBtn" class="login-link">
+      Login
+    </span>
+      
     <div class="blob"></div>
     <div class="blob"></div>
   
-    <div class="portal-container">
+    <!--div class="portal-container">
     
-      <!-- QR CARD -->
       <div class="portal-card">
     
         <h2>Attendance QR</h2>
@@ -33,35 +36,82 @@
           <div id="qrTimer">02:00</div>
         </div>
     
+  </div-->
+    
+    <div class="portal-card">
+      
+        <h2>Attendance QR</h2>
+      
+        <img
+          id="attendanceQR"
+          class="qr-image"
+          src="assets/images/sample-qr.png">
+      
+        <p>Scan to record attendance</p>
+      
+        <div class="qr-expiry">
+          <small>QR Expires In</small>
+          <div id="qrTimer">02:00</div>
+        </div>
+      
       </div>
     
       <!-- LOGIN CARD -->
-      <div class="portal-card">
+      <!--div class="portal-card">
 
-        <div class="login">
-    
-          <h2>HRIS Login</h2>
+          <div class="login">
       
-          <input
-            id="username"
-            placeholder="Username">
+            <h2>HRIS Login</h2>
+        
+            <input
+              id="username"
+              placeholder="Username">
+        
+            <input
+              id="password"
+              type="password"
+              placeholder="Password">
+        
+            <button onclick="login()">
+              Sign In
+            </button>
+        
+            <div id="msg"></div>
+  
+          </div>
       
-          <input
-            id="password"
-            type="password"
-            placeholder="Password">
-      
-          <button onclick="login()">
-            Sign In
-          </button>
-      
-          <div id="msg"></div>
-
         </div>
+      
+    </div-->
+    <div id="loginModal" class="modal">
+    
+      <div class="modal-card">
+    
+        <span class="close-btn" onclick="closeLogin()">
+          &times;
+        </span>
+    
+        <h2>HRIS Login</h2>
+    
+        <input
+          id="username"
+          placeholder="Username">
+    
+        <input
+          id="password"
+          type="password"
+          placeholder="Password">
+    
+        <button onclick="login()">
+          Sign In
+        </button>
+    
+        <div id="msg"></div>
     
       </div>
     
     </div>
+    
   
     <script src="assets/js/app.js"></script>
   
